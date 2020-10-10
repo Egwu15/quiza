@@ -20,26 +20,26 @@ class _HomePageState extends State<HomePage> {
               homepageCard(
                   context: context,
                   category: "General Knowledge",
-                  categoryId: 9),
+                  categoryId: "9"),
               homepageCard(
-                  context: context, category: 'Mythology', categoryId: 20),
+                  context: context, category: 'Mythology', categoryId: "20"),
               homepageCard(
                   context: context,
                   category: 'Japanese anime and manga',
-                  categoryId: 31),
+                  categoryId: "31"),
               homepageCard(
                   context: context,
                   category: 'Cartoon and aimation',
-                  categoryId: 32),
+                  categoryId: "32"),
               homepageCard(
-                  context: context, category: 'Sports', categoryId: 21),
+                  context: context, category: 'Sports', categoryId: "21"),
               homepageCard(
-                  context: context, category: 'Computers', categoryId: 18),
+                  context: context, category: 'Computers', categoryId: "18"),
               homepageCard(
-                  context: context, category: "Vehicles", categoryId: 28),
-              homepageCard(context: context, category: "Music", categoryId: 12),
+                  context: context, category: "Vehicles", categoryId: "28"),
+              homepageCard(context: context, category: "Music", categoryId: "12"),
               homepageCard(
-                  context: context, category: "Video games", categoryId: 15),
+                  context: context, category: "Video games", categoryId: "15"),
             ],
           ),
         ),
