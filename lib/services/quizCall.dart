@@ -9,9 +9,11 @@ Future<QuizModel> fetchQuiz({String difficulty, String categoryId}) async {
   final response = await http.get(url);
   if (response.statusCode == 200) {
     print('reponse 200!');
-    return QuizModel.fromJson(json.decode(response.body.replaceAll("&#039;", "'").replaceAll('&quot;', '"')));
+    return QuizModel.fromJson(json.decode(response.body.replaceAll("&#039;", "'").replaceAll('&quot;', "''")));
     
   } else {
     throw Exception('failed to load');
   }
 }
+
+int questionNumber = 0;

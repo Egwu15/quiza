@@ -13,7 +13,6 @@ AnimatedPadding homepageCard(
     curve: Curves.easeIn,
     child: InkWell(
       onTap: () {
-        
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -53,11 +52,13 @@ AnimatedPadding difficultyCard(
     curve: Curves.easeIn,
     child: InkWell(
       onTap: () {
-        
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => QuizPage(difficulty: actualDifficulty, categoryId: categoryId,),
+            builder: (context) => QuizPage(
+              difficulty: actualDifficulty,
+              categoryId: categoryId,
+            ),
           ),
         );
       },
@@ -96,5 +97,48 @@ AnimatedPadding difficultyCard(
         ),
       ),
     ),
+  );
+}
+
+AnimatedPadding optionsCard(
+    {BuildContext context, String correctAnswer, String cardText,Function answerFunction}) {
+  return AnimatedPadding(
+    duration: Duration(seconds: 2),
+    padding: const EdgeInsets.all(10.0),
+    curve: Curves.easeIn,
+    child: InkWell(
+      onTap: answerFunction,
+      child: ClayContainer(
+        spread: 2.0,
+        color: backgroundColor,
+        borderRadius: 8.0,
+        // curveType: CurveType.concave,
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Text(
+            cardText,
+            style: TextStyle(
+                fontSize: 18.0, color: Colors.white, fontFamily: "karla"),
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
+
+Padding questionCard(question) {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: ClayContainer(borderRadius: 8.0,
+    depth: 15,
+      color: backgroundColor,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+      question,
+      style: TextStyle(fontSize: 18.0, color: Colors.white, fontFamily: "karla"),
+    ),
+        )),
   );
 }
