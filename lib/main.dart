@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:fun_quiz/services/quizbrain.dart';
+import 'package:provider/provider.dart';
 import 'screens/homepage.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => Scorebrain(),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

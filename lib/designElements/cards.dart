@@ -101,7 +101,10 @@ AnimatedPadding difficultyCard(
 }
 
 AnimatedPadding optionsCard(
-    {BuildContext context, String correctAnswer, String cardText,Function answerFunction}) {
+    {BuildContext context,
+    String correctAnswer,
+    String cardText,
+    Function answerFunction}) {
   return AnimatedPadding(
     duration: Duration(seconds: 2),
     padding: const EdgeInsets.all(10.0),
@@ -126,19 +129,60 @@ AnimatedPadding optionsCard(
   );
 }
 
-
 Padding questionCard(question) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
-    child: ClayContainer(borderRadius: 8.0,
-    depth: 15,
+    child: ClayContainer(
+      borderRadius: 8.0,
+      depth: 15,
       color: backgroundColor,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(
-      question,
-      style: TextStyle(fontSize: 18.0, color: Colors.white, fontFamily: "karla"),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(
+          question,
+          style: TextStyle(
+              fontSize: 18.0, color: Colors.white, fontFamily: "karla"),
+        ),
+      ),
     ),
-        )),
   );
+}
+
+Padding scoreCircle(score) {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: ClayContainer(
+      color: backgroundColor,
+      curveType: CurveType.concave,
+      borderRadius: 20,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(
+          score,
+          style: TextStyle(fontSize: 13.0, color: Colors.white, fontFamily: "karla"),
+        ),
+      ),
+    ),
+  );
+}
+
+Widget lives(List livesLeft) {
+  List<Widget> liveList = [];
+  for (var i in livesLeft) {
+    liveList.add(Padding(
+      padding: const EdgeInsets.all(4.0),
+      child: FaIcon(
+        FontAwesomeIcons.heartBroken,
+        color: Colors.white,
+      ),
+    ));
+    
+  }
+  return ClayContainer(
+      color: backgroundColor,
+      curveType: CurveType.concave,
+      borderRadius: 20,
+      child: Row(
+        children: liveList,
+      ));
 }
